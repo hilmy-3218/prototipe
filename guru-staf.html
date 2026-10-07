@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru & Staf - SMA Negeri 1 Kudus</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==================== RESET & VARIABLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #7f1d1d;    /* Deep Red */
+            --secondary-color: #b91c1c;  /* Royal Red */
+            --accent-color: #f59e0b;     /* Gold Accent */
+            --accent-hover: #d97706;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==================== HEADER & NAVBAR ==================== */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-info span {
+            margin-right: 20px;
+        }
+
+        .top-info i {
+            color: var(--accent-color);
+            margin-right: 6px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: var(--accent-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-portal {
+            background-color: var(--accent-color);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+        }
+
+        .btn-portal:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-portal::after {
+            display: none !important;
+        }
+
+        /* ==================== PAGE HERO HEADER ==================== */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 60px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 50%;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: var(--accent-color);
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ==================== COMMON LAYOUT ==================== */
+        section {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        /* ==================== STATISTIK GURU ==================== */
+        .staff-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card-staff {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            border-bottom: 4px solid var(--accent-color);
+            text-align: center;
+        }
+
+        .stat-card-staff i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-card-staff h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .stat-card-staff p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* ==================== PIMPINAN SEKOLAH ==================== */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .leader-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .leader-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .leader-img {
+            height: 280px;
+            background: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leader-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-info {
+            padding: 25px;
+        }
+
+        .leader-role {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-hover);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .leader-info h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .leader-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ==================== FILTER BUTTONS ==================== */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        /* ==================== GRID GURU & STAF ==================== */
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .staff-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .staff-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .staff-avatar {
+            height: 220px;
+            background: #cbd5e1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .staff-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .staff-body {
+            padding: 20px 15px;
+        }
+
+        .staff-body h4 {
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .staff-subject {
+            color: var(--accent-hover);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .staff-nip {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .staff-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 12px;
+        }
+
+        .staff-social a {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-light);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .staff-social a:hover {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding-top: 60px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5% 40px 5%;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            background: rgba(0,0,0,0.2);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            .nav-links {
+                display: none;
+            }
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fas fa-phone"></i> (0291) 431368</span>
+            <span><i class="fas fa-envelope"></i> info@sma1kudus.sch.id</span>
+            <span><i class="fas fa-map-marker-alt"></i> Jl. Pramuka No.41, Kudus</span>
+        </div>
+        <div class="top-social">
+            <span>NPSN: 20317531 | Akreditasi A</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="logo-text">
+                    <h1>SMAN 1 KUDUS</h1>
+                    <p>SMASAKU BERSINERGI</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="visi-misi.html">Visi & Misi</a></li>
+                <li><a href="guru-staf.html" class="active">Guru & Staf</a></li>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="prestasi.html">Prestasi</a></li>
+                <li><a href="index.html#acara" class="btn-portal">SPMB Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PAGE HERO HEADER -->
+    <div class="page-hero">
+        <div class="page-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Beranda</a> / <span>Guru & Staf</span>
+            </div>
+            <h1>Guru & Tenaga Kependidikan</h1>
+            <p>Mengenal pendidik dan staf profesional SMA Negeri 1 Kudus yang berdedikasi tinggi membimbing generasi emas berkarakter dan berprestasi.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 1: STATISTIK & PIMPINAN -->
+    <section>
+        <!-- Statistics Bar -->
+        <div class="staff-stats">
+            <div class="stat-card-staff">
+                <i class="fas fa-user-tie"></i>
+                <h3>85+</h3>
+                <p>Total Guru & Staf</p>
+            </div>
+            <div class="stat-card-staff">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>35+</h3>
+                <p>Kualifikasi Magister (S2/S3)</p>
+            </div>
+            <div class="stat-card-staff">
+                <i class="fas fa-award"></i>
+                <h3>90%</h3>
+                <p>Guru Tersertifikasi</p>
+            </div>
+            <div class="stat-card-staff">
+                <i class="fas fa-users-cog"></i>
+                <h3>18</h3>
+                <p>Tenaga Kependidikan</p>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <span>Struktur Organisasi</span>
+            <h2>Pimpinan Sekolah</h2>
+        </div>
+
+        <!-- Leadership Grid -->
+        <div class="leadership-grid">
+            <!-- Kepala Sekolah -->
+            <div class="leader-card">
+                <div class="leader-img">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Kepala Sekolah">
+                </div>
+                <div class="leader-info">
+                    <span class="leader-role">Kepala Sekolah</span>
+                    <h3>Drs. H. Sudirman, M.Pd.</h3>
+                    <p>Pembina Utama Muda / IV c</p>
+                </div>
+            </div>
+
+            <!-- Wakasek Kurikulum -->
+            <div class="leader-card">
+                <div class="leader-img">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Wakasek Kurikulum">
+                </div>
+                <div class="leader-info">
+                    <span class="leader-role">Waka Kurikulum</span>
+                    <h3>Siti Rahmawati, S.Pd., M.M.</h3>
+                    <p>Pengampu Bahasa Indonesia</p>
+                </div>
+            </div>
+
+            <!-- Wakasek Kesiswaan -->
+            <div class="leader-card">
+                <div class="leader-img">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Wakasek Kesiswaan">
+                </div>
+                <div class="leader-info">
+                    <span class="leader-role">Waka Kesiswaan</span>
+                    <h3>Budi Santoso, S.Pd., M.Si.</h3>
+                    <p>Pengampu Fisika</p>
+                </div>
+            </div>
+
+            <!-- Wakasek Sarpras -->
+            <div class="leader-card">
+                <div class="leader-img">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Wakasek Sarpras">
+                </div>
+                <div class="leader-info">
+                    <span class="leader-role">Waka Sarana Prasarana</span>
+                    <h3>Eko Prasetyo, S.Kom., M.T.</h3>
+                    <p>Pengampu Informatika</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: DAFTAR TENAGA PENDIDIK -->
+    <section style="background-color: var(--white);">
+        <div class="section-title">
+            <span>Tenaga Pendidik & Kependidikan</span>
+            <h2>Dewan Guru & Staf</h2>
+        </div>
+
+        <!-- Filter Category Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active">Semua</button>
+            <button class="filter-btn">MIPA</button>
+            <button class="filter-btn">IPS & Soshum</button>
+            <button class="filter-btn">Bahasa & Seni</button>
+            <button class="filter-btn">Agama & PJOK</button>
+            <button class="filter-btn">Staf TU</button>
+        </div>
+
+        <!-- Staff Grid -->
+        <div class="staff-grid">
+            <!-- Guru 1 -->
+            <div class="staff-card">
+                <div class="staff-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Guru Matematika">
+                </div>
+                <div class="staff-body">
+                    <h4>Anisa Tri Hapsari, M.Pd.</h4>
+                    <span class="staff-subject">Matematika Lanjut</span>
+                    <p class="staff-nip">NIP. 19850412 201001 2 015</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guru 2 -->
+            <div class="staff-card">
+                <div class="staff-avatar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Guru Kimia">
+                </div>
+                <div class="staff-body">
+                    <h4>Ahmad Hidayat, S.Si.</h4>
+                    <span class="staff-subject">Kimia & Riset</span>
+                    <p class="staff-nip">NIP. 19820815 200801 1 009</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guru 3 -->
+            <div class="staff-card">
+                <div class="staff-avatar">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Guru Bahasa Inggris">
+                </div>
+                <div class="staff-body">
+                    <h4>Dewi Lestari, S.Pd.</h4>
+                    <span class="staff-subject">Bahasa Inggris</span>
+                    <p class="staff-nip">NIP. 19900322 201502 2 004</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guru 4 -->
+            <div class="staff-card">
+                <div class="staff-avatar">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Guru Biologi">
+                </div>
+                <div class="staff-body">
+                    <h4>Dr. Hendra Wijaya, M.Sc.</h4>
+                    <span class="staff-subject">Biologi & Lingkungan</span>
+                    <p class="staff-nip">NIP. 19781104 200501 1 003</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guru 5 -->
+            <div class="staff-card">
+                <div class="staff-avatar">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Guru Sejarah">
+                </div>
+                <div class="staff-body">
+                    <h4>Rina Amalia, S.Pd.</h4>
+                    <span class="staff-subject">Sejarah Indonesia</span>
+                    <p class="staff-nip">NIP. 19920618 201903 2 011</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guru 6 -->
+            <div class="staff-card">
+                <div class="staff-avatar">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Guru Sosiologi">
+                </div>
+                <div class="staff-body">
+                    <h4>Bambang Kurniawan, M.A.</h4>
+                    <span class="staff-subject">Sosiologi & BK</span>
+                    <p class="staff-nip">NIP. 19870109 201201 1 005</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guru 7 -->
+            <div class="staff-card">
+                <div class="staff-avatar">
+                    <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80" alt="Guru Seni Budaya">
+                </div>
+                <div class="staff-body">
+                    <h4>Maya Kartika, S.Sn.</h4>
+                    <span class="staff-subject">Seni Budaya & Keterampilan</span>
+                    <p class="staff-nip">NIP. 19940210 202012 2 008</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Staf 8 -->
+            <div class="staff-card">
+                <div class="staff-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80" alt="Kepala TU">
+                </div>
+                <div class="staff-body">
+                    <h4>Agus Priyono, S.E.</h4>
+                    <span class="staff-subject">Kepala Tata Usaha</span>
+                    <p class="staff-nip">NIP. 19750519 200212 1 002</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>SMA NEGERI 1 KUDUS</h4>
+                <p>Sekolah Menengah Atas unggulan di Kabupaten Kudus yang bertekad membentuk siswa-siswi berkarakter mulia dan berprestasi unggul.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="visi-misi.html">Visi & Misi</a></li>
+                    <li><a href="guru-staf.html">Guru & Staf</a></li>
+                    <li><a href="sejarah.html">Sejarah</a></li>
+                    <li><a href="prestasi.html">Prestasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="#">Kurikulum</a></li>
+                    <li><a href="#">Kesiswaan</a></li>
+                    <li><a href="#">Sarana Prasarana</a></li>
+                    <li><a href="#">Info SPMB</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Pramuka No.41, Nganguk, Mlati Lor, Kec. Kota Kudus, Kab. Kudus, Jawa Tengah 59319</p>
+                <p><i class="fas fa-phone"></i> (0291) 431368</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMA Negeri 1 Kudus (SMASA). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

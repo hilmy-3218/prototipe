@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah - SMA Negeri 1 Kudus</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==================== RESET & VARIABLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #7f1d1d;    /* Deep Red */
+            --secondary-color: #b91c1c;  /* Royal Red */
+            --accent-color: #f59e0b;     /* Gold Accent */
+            --accent-hover: #d97706;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==================== HEADER & NAVBAR ==================== */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-info span {
+            margin-right: 20px;
+        }
+
+        .top-info i {
+            color: var(--accent-color);
+            margin-right: 6px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: var(--accent-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-portal {
+            background-color: var(--accent-color);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+        }
+
+        .btn-portal:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-portal::after {
+            display: none !important;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* ==================== PAGE HERO / BANNER ==================== */
+        .history-hero {
+            position: relative;
+            background: linear-gradient(rgba(127, 29, 29, 0.88), rgba(185, 28, 28, 0.82)), 
+                        url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: var(--white);
+            padding: 100px 5% 80px;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .history-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .history-hero .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+        }
+
+        .history-hero .breadcrumb a {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .history-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .history-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.7;
+        }
+
+        /* ==================== COMMON LAYOUT ==================== */
+        section {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        /* ==================== HISTORY OVERVIEW ==================== */
+        .history-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .history-intro-text h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .history-intro-text p {
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .quote-box {
+            background: #fff;
+            border-left: 4px solid var(--accent-color);
+            padding: 20px 25px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow);
+            margin-top: 25px;
+        }
+
+        .quote-box p {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px !important;
+        }
+
+        .quote-box span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .history-intro-gallery {
+            position: relative;
+        }
+
+        .main-history-img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 4px solid var(--white);
+        }
+
+        .badge-established {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 16px;
+            border: 3px solid var(--accent-color);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .badge-established .year {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            line-height: 1;
+        }
+
+        .badge-established .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ==================== INTERACTIVE TIMELINE ==================== */
+        .timeline-section {
+            background-color: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 60px 40px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color), var(--secondary-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container.left {
+            left: 0;
+        }
+
+        .timeline-container.right {
+            left: 50%;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: var(--white);
+            border: 4px solid var(--accent-color);
+            top: 30px;
+            border-radius: 50%;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .timeline-container.right::after {
+            left: -12px;
+        }
+
+        .timeline-container:hover::after {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .timeline-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-color);
+        }
+
+        .timeline-img-box {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .timeline-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .timeline-card:hover .timeline-img-box img {
+            transform: scale(1.08);
+        }
+
+        .timeline-year-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: var(--accent-color);
+            font-weight: 800;
+            font-size: 0.9rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .timeline-content {
+            padding: 25px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ==================== HISTORICAL GALLERY ==================== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 260px;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(127, 29, 29, 0.95), rgba(0, 0, 0, 0.2));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            color: var(--white);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* ==================== LEADERSHIP / PRINCIPALS ==================== */
+        .principals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .principal-item {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .principal-item:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--accent-color);
+        }
+
+        .principal-photo-wrapper {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 5px;
+            border: 2px dashed var(--accent-color);
+        }
+
+        .principal-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .principal-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .principal-item .tenure {
+            font-size: 0.85rem;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-hover);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .principal-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ==================== HISTORICAL STATS / MILESTONES ==================== */
+        .facts-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .fact-box h3 {
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .fact-box h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .fact-box p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding-top: 60px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5% 40px 5%;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            background: rgba(0,0,0,0.2);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 992px) {
+            .history-intro {
+                grid-template-columns: 1fr;
+            }
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 19px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                display: none;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .history-hero h1 {
+                font-size: 2.2rem;
+            }
+            .badge-established {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin-top: 20px;
+            }
+            .timeline-section {
+                padding: 40px 15px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fas fa-phone"></i> (0291) 431368</span>
+            <span><i class="fas fa-envelope"></i> info@sma1kudus.sch.id</span>
+            <span><i class="fas fa-map-marker-alt"></i> Jl. Pramuka No.41, Kudus</span>
+        </div>
+        <div class="top-social">
+            <span>NPSN: 20317531 | Akreditasi A</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="logo-text">
+                    <h1>SMAN 1 KUDUS</h1>
+                    <p>SMASAKU BERSINERGI</p>
+                </div>
+            </a>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="visi-misi.html">Visi & Misi</a></li>
+                <li><a href="guru-staf.html">Guru & Staf</a></li>
+                <li><a href="sejarah.html" class="active">Sejarah</a></li>
+                <li><a href="prestasi.html">Prestasi</a></li>
+                <li><a href="index.html#acara" class="btn-portal">SPMB Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="history-hero">
+        <div class="history-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Beranda</a> <i class="fas fa-chevron-right"></i> <span>Sejarah Sekolah</span>
+            </div>
+            <h1>Jejak Langkah & Sejarah SMAN 1 Kudus</h1>
+            <p>Perjalanan panjang dedikasi mencerdaskan kehidupan bangsa, membentuk karakter insan unggul, dan mengukir tradisi prestasi dari masa ke masa.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 1: PERJALANAN AWAL / IKHTISAR -->
+    <section>
+        <div class="history-intro">
+            <div class="history-intro-text">
+                <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-hover); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; display: inline-block; margin-bottom: 15px;">
+                    <i class="fas fa-landmark"></i> Warisan & Tradisi
+                </span>
+                <h3>Awal Mula Pendirian Sekolah Pelopor Pendidikan Kudus</h3>
+                <p>SMA Negeri 1 Kudus didirikan sebagai wujud dedikasi masyarakat dan pemerintah Kabupaten Kudus dalam menyediakan sarana pendidikan menengah atas berstandar tinggi. Berdiri sejak tahun 1961, sekolah ini awalnya hadir untuk menjawab kebutuhan generasi muda akan pendidikan berkualitas di wilayah eks-Karesidenan Pati.</p>
+                <p>Sejak pertama kali pintu gerbangnya dibuka, SMASA terus memegang teguh komitmen untuk mencetak lulusan berkepribadian luhur, berilmu pengetahuan luas, serta berwawasan kebangsaan yang kokoh.</p>
+                
+                <div class="quote-box">
+                    <p>"Pendidikan bukan sekadar transfer ilmu, melainkan penyalaan api semangat keunggulan yang diwariskan dari generasi ke generasi."</p>
+                    <span>— Sesepuh Pendiri SMAN 1 Kudus</span>
+                </div>
+            </div>
+
+            <div class="history-intro-gallery">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQME0MTUUghnVgpbtg3d3c5S2iiLhSx4V1rNSrHR72YYw&s=10" alt="Bangunan Bersejarah SMA Negeri 1 Kudus" class="main-history-img">
+                <div class="badge-established">
+                    <div class="year">1961</div>
+                    <div class="label">Tahun Berdiri</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: TIMELINE SEJARAH INTERAKTIF -->
+    <section id="timeline">
+        <div class="section-title">
+            <span>Tonggak Sejarah</span>
+            <h2>Perjalanan dari Masa ke Masa</h2>
+        </div>
+
+        <div class="timeline-section">
+            <div class="timeline">
+                
+                <!-- Timeline Item 1 -->
+                <div class="timeline-container left">
+                    <div class="timeline-card">
+                        <div class="timeline-img-box">
+                            <span class="timeline-year-tag">1961 - Pendirian</span>
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Pendirian SMAN 1 Kudus">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Fajar Baru Pendidikan Kudus</h3>
+                            <p>Resmi didirikan berdasarkan Surat Keputusan Menteri Pendidikan. Pada awal berdirinya, proses belajar mengajar menggunakan gedung perintis dengan fasilitas bersahaja namun didukung semangat juang guru dan siswa yang luar biasa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-container right">
+                    <div class="timeline-card">
+                        <div class="timeline-img-box">
+                            <span class="timeline-year-tag">1978 - Pengembangan Kampus</span>
+                            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="Perpustakaan & Gedung Baru">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Pembangunan & Relokasi Kampus Utama</h3>
+                            <p>Seiring pesatnya pertambahan jumlah siswa, sekolah direlokasi ke lokasi strategis di Jalan Pramuka No. 41 Kudus. Pembangunan ruang kelas baru, laboratorium sains dasar, dan perpustakaan sekolah mulai dirintis secara bertahap.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-container left">
+                    <div class="timeline-card">
+                        <div class="timeline-img-box">
+                            <span class="timeline-year-tag">1995 - Era Prestasi Nasional</span>
+                            <img src="https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?auto=format&fit=crop&w=800&q=80" alt="Piala dan Prestasi Sekolah">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Dominasi Sains & Seni Jawa Tengah</h3>
+                            <p>SMASA mengukuhkan posisinya sebagai sekolah rujukan di Jateng dengan berbagai piala kejuaraan Olimpiade Sains Nasional (OSN), kejuaraan olahraga lokal, serta prestasi kebudayaan daerah.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-container right">
+                    <div class="timeline-card">
+                        <div class="timeline-img-box">
+                            <span class="timeline-year-tag">2010 - Akreditasi & Digitalisasi</span>
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Teknologi dan Laboratorium Komputer">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Modernisasi Laboratorium & RSNBI</h3>
+                            <p>Mengintegrasikan sistem pembelajaran berbasis IT dengan pembangunan laboratorium multimedia, sistem informasi perpustakaan digital, serta meraih status Akreditasi A secara berkelanjutan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="timeline-container left">
+                    <div class="timeline-card">
+                        <div class="timeline-img-box">
+                            <span class="timeline-year-tag">2021 - Sekolah Penggerak</span>
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Sekolah Penggerak & Karakter">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Pionir Kurikulum Merdeka</h3>
+                            <p>Terpilih sebagai salah satu Sekolah Penggerak Utama di Kabupaten Kudus. Fokus pada penguatan Profil Pelajar Pancasila, kepemimpinan berwawasan global, dan pembelajaran berbasis proyek riset.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 6 -->
+                <div class="timeline-container right">
+                    <div class="timeline-card">
+                        <div class="timeline-img-box">
+                            <span class="timeline-year-tag">2026 - Era Modern</span>
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="SMAN 1 Kudus Saat Ini">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Inovasi Pendidikan Ramah Lingkungan</h3>
+                            <p>Menjadi sekolah rujukan Adiwiyata & Digital Campus dengan fasilitas kelas pintar (smart classroom), prestasi internasional, serta sinergi alumni yang tersebar di perguruan tinggi ternama dunia.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: FAKTA KUNCI SEJARAH -->
+    <section>
+        <div class="facts-section">
+            <div class="fact-box">
+                <h3>65+</h3>
+                <h4>Tahun Dedikasi</h4>
+                <p>Melayani dan mendidik generasi muda Indonesia sejak 1961.</p>
+            </div>
+            <div class="fact-box">
+                <h3>25.000+</h3>
+                <h4>Alumni Tersebar</h4>
+                <p>Melahirkan tokoh nasional, akademisi, profesional, dan pengusaha.</p>
+            </div>
+            <div class="fact-box">
+                <h3>100%</h3>
+                <h4>Terakreditasi A</h4>
+                <p>Menjaga standar kualitas pembelajaran secara konsisten.</p>
+            </div>
+            <div class="fact-box">
+                <h3>50+</h3>
+                <h4>Penghargaan Utama</h4>
+                <p>Meraih tropi tingkat regional, nasional, hingga internasional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: GALERI DOKUMENTASI SEJARAH -->
+    <section>
+        <div class="section-title">
+            <span>Arsip Visual</span>
+            <h2>Galeri Kenangan SMAN 1 Kudus</h2>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" alt="Ruang Belajar Klasik">
+                <div class="gallery-overlay">
+                    <h4>Gedung Utama Dulu & Kini</h4>
+                    <p>Pusat administrasi dan simbol kepemimpinan sekolah yang berdiri megah.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Kegiatan Laboratorium Praktikum">
+                <div class="gallery-overlay">
+                    <h4>Tradisi Riset & Sains</h4>
+                    <p>Praktikum siswa di laboratorium kimia dan fisika dalam melahirkan juara OSN.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Kegiatan Ekstrakurikuler">
+                <div class="gallery-overlay">
+                    <h4>Pramuka & Karakter Kebangsaan</h4>
+                    <p>Pembentukan kedisiplinan serta jiwa kepemimpinan generasi muda SMASA.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Perpustakaan Dokumentasi">
+                <div class="gallery-overlay">
+                    <h4>Pusat Literatur & Aksara</h4>
+                    <p>Ruang baca dan dokumentasi sejarah keliterasian sekolah dari masa ke masa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: KEPALA SEKOLAH DARI MASA KE MASA -->
+    <section style="background-color: var(--bg-light);">
+        <div class="section-title">
+            <span>Apresiasi Kepemimpinan</span>
+            <h2>Kepala Sekolah dari Masa ke Masa</h2>
+        </div>
+
+        <div class="principals-grid">
+            <div class="principal-item">
+                <div class="principal-photo-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Kepala Sekolah Pertama">
+                </div>
+                <h4>R. Soedirman</h4>
+                <div class="tenure">1961 - 1970</div>
+                <p>Kepala Sekolah Perintis yang meletakkan dasar pondasi disiplin dan integritas awal SMASA.</p>
+            </div>
+
+            <div class="principal-item">
+                <div class="principal-photo-wrapper">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Kepala Sekolah Era 80-an">
+                </div>
+                <h4>Drs. H. M. Sastro</h4>
+                <div class="tenure">1982 - 1994</div>
+                <p>Memimpin era pemindahan ke kampus baru Jalan Pramuka serta perluasan sarana sarpras.</p>
+            </div>
+
+            <div class="principal-item">
+                <div class="principal-photo-wrapper">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" alt="Kepala Sekolah Era Modern">
+                </div>
+                <h4>Drs. Hj. Supriyanto, M.Pd.</h4>
+                <div class="tenure">2012 - 2020</div>
+                <p>Pionir transformasi digitalisasi sekolah dan perluasan jejaring prestasi internasional.</p>
+            </div>
+
+            <div class="principal-item">
+                <div class="principal-photo-wrapper">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" alt="Kepala Sekolah Sekarang">
+                </div>
+                <h4>Pimpinan Saat Ini</h4>
+                <div class="tenure">2020 - Sekarang</div>
+                <p>Membawa SMAN 1 Kudus sukses menjadi Sekolah Penggerak dan Terdepan dalam Inovasi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>SMA NEGERI 1 KUDUS</h4>
+                <p>Sekolah Menengah Atas unggulan di Kabupaten Kudus yang bertekad membentuk siswa-siswi berkarakter mulia dan berprestasi unggul.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="visi-misi.html">Visi & Misi</a></li>
+                    <li><a href="guru-staf.html">Guru & Staf</a></li>
+                    <li><a href="sejarah.html">Sejarah</a></li>
+                    <li><a href="prestasi.html">Prestasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="#">Kurikulum</a></li>
+                    <li><a href="#">Kesiswaan</a></li>
+                    <li><a href="#">Sarana Prasarana</a></li>
+                    <li><a href="#">Info SPMB</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Pramuka No.41, Nganguk, Mlati Lor, Kec. Kota Kudus, Kab. Kudus, Jawa Tengah 59319</p>
+                <p><i class="fas fa-phone"></i> (0291) 431368</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMA Negeri 1 Kudus (SMASA). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

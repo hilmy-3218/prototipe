@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestasi - SMA Negeri 1 Kudus</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==================== RESET & VARIABLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #7f1d1d;    /* Deep Red */
+            --secondary-color: #b91c1c;  /* Royal Red */
+            --accent-color: #f59e0b;     /* Gold Accent */
+            --accent-hover: #d97706;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==================== HEADER & NAVBAR ==================== */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-info span {
+            margin-right: 20px;
+        }
+
+        .top-info i {
+            color: var(--accent-color);
+            margin-right: 6px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: var(--accent-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-portal {
+            background-color: var(--accent-color);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+        }
+
+        .btn-portal:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-portal::after {
+            display: none !important;
+        }
+
+        /* ==================== PAGE HERO HEADER ==================== */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 60px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 50%;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: var(--accent-color);
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ==================== COMMON LAYOUT ==================== */
+        section {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        /* ==================== HIGHLIGHT PRESTASI UTAMA ==================== */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .highlight-img-box {
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .highlight-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .highlight-card:hover .highlight-img-box img {
+            transform: scale(1.05);
+        }
+
+        .badge-tingkat {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .highlight-content {
+            padding: 25px;
+        }
+
+        .highlight-category {
+            font-size: 0.8rem;
+            color: var(--accent-hover);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .highlight-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .highlight-winner {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            padding: 10px 14px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .highlight-winner i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        /* ==================== FILTER & TAB PRESTASI ==================== */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        /* ==================== DAFTAR TABEL PRESTASI ==================== */
+        .prestasi-table-wrapper {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+        }
+
+        .prestasi-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .prestasi-table th {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 16px 20px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .prestasi-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .prestasi-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .prestasi-table tr:hover {
+            background-color: rgba(248, 250, 252, 0.8);
+        }
+
+        .juara-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .juara-1 {
+            background: rgba(245, 158, 11, 0.15);
+            color: #d97706;
+        }
+
+        .juara-2 {
+            background: rgba(100, 116, 139, 0.15);
+            color: #475569;
+        }
+
+        .juara-3 {
+            background: rgba(180, 83, 9, 0.15);
+            color: #b45309;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding-top: 60px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5% 40px 5%;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            background: rgba(0,0,0,0.2);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            .nav-links {
+                display: none;
+            }
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .prestasi-table-wrapper {
+                padding: 15px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fas fa-phone"></i> (0291) 431368</span>
+            <span><i class="fas fa-envelope"></i> info@sma1kudus.sch.id</span>
+            <span><i class="fas fa-map-marker-alt"></i> Jl. Pramuka No.41, Kudus</span>
+        </div>
+        <div class="top-social">
+            <span>NPSN: 20317531 | Akreditasi A</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="logo-text">
+                    <h1>SMAN 1 KUDUS</h1>
+                    <p>SMASAKU BERSINERGI</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="visi-misi.html">Visi & Misi</a></li>
+                <li><a href="guru-staf.html">Guru & Staf</a></li>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="prestasi.html" class="active">Prestasi</a></li>
+                <li><a href="index.html#acara" class="btn-portal">SPMB Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PAGE HERO HEADER -->
+    <div class="page-hero">
+        <div class="page-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Beranda</a> / <span>Prestasi Sekolah</span>
+            </div>
+            <h1>Prestasi & Kebanggaan SMASA</h1>
+            <p>Rekam jejak keunggulan siswa-siswi SMA Negeri 1 Kudus dalam mengukir karya di tingkat Kabupaten, Provinsi, Nasional, hingga Internasional.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 1: HIGHLIGHT PRESTASI UTAMA -->
+    <section>
+        <div class="section-title">
+            <span>Capaian Unggulan</span>
+            <h2>Sorotan Prestasi Terbaru</h2>
+        </div>
+
+        <div class="highlight-grid">
+            <!-- Highlight 1 -->
+            <div class="highlight-card">
+                <div class="highlight-img-box">
+                    <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=800&q=80" alt="Medali Emas OSN Sains">
+                    <span class="badge-tingkat">Tingkat Nasional</span>
+                </div>
+                <div class="highlight-content">
+                    <span class="highlight-category">Sains & Akademik</span>
+                    <h3>Medali Emas OSN Matematika & Kebumian 2025</h3>
+                    <div class="highlight-winner">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Ahmad Fauzi & Tim Sains SMASA</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Berhasil mengalahkan ratusan peserta dari seluruh provinsi di Indonesia dalam ajang Olimpiade Sains Nasional (OSN).</p>
+                </div>
+            </div>
+
+            <!-- Highlight 2 -->
+            <div class="highlight-card">
+                <div class="highlight-img-box">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="Juara Karnaval Budaya">
+                    <span class="badge-tingkat">Tingkat Kabupaten</span>
+                </div>
+                <div class="highlight-content">
+                    <span class="highlight-category">Seni & Budaya</span>
+                    <h3>Juara 1 Karnaval Budaya Hari Jadi Kudus 2026</h3>
+                    <div class="highlight-winner">
+                        <i class="fas fa-users"></i>
+                        <span>Tim Seni & Tim Karnaval SMASA</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Tampil memukau dengan menyajikan kolaborasi tarian tradisional khas Kudus dan kostum kreatif ramah lingkungan.</p>
+                </div>
+            </div>
+
+            <!-- Highlight 3 -->
+            <div class="highlight-card">
+                <div class="highlight-img-box">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Lomba Karya Tulis Ilmiah">
+                    <span class="badge-tingkat">Tingkat Internasional</span>
+                </div>
+                <div class="highlight-content">
+                    <span class="highlight-category">Riset & Inovasi</span>
+                    <h3>Gold Medal International Science Project Olympiad</h3>
+                    <div class="highlight-winner">
+                        <i class="fas fa-award"></i>
+                        <span>Siti Nurhaliza & Annisa Rahma</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Inovasi Pemanfaatan Limbah Parijoto Kudus sebagai produk kesehatan alami meraih peringkat pertama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: DAFTAR PRESTASI TERSTURKTUR -->
+    <section style="background-color: var(--white);">
+        <div class="section-title">
+            <span>Rekapitulasi Kejuaraan</span>
+            <h2>Daftar Prestasi Siswa</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active">Semua</button>
+            <button class="filter-btn">Sains & Riset</button>
+            <button class="filter-btn">Seni & Budaya</button>
+            <button class="filter-btn">Olahraga</button>
+            <button class="filter-btn">Pramuka & Paskibra</button>
+        </div>
+
+        <!-- Table -->
+        <div class="prestasi-table-wrapper">
+            <table class="prestasi-table">
+                <thead>
+                    <tr>
+                        <th>Tahun</th>
+                        <th>Nama Kejuaraan / Lomba</th>
+                        <th>Kategori</th>
+                        <th>Tingkat</th>
+                        <th>Peringkat</th>
+                        <th>Peraih Prestasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2026</strong></td>
+                        <td>Karnaval Budaya Hari Jadi Kota Kudus</td>
+                        <td>Seni & Budaya</td>
+                        <td>Kabupaten</td>
+                        <td><span class="juara-tag juara-1"><i class="fas fa-trophy"></i> Juara 1</span></td>
+                        <td>Tim Karnaval SMAN 1 Kudus</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2025</strong></td>
+                        <td>Olimpiade Sains Nasional (OSN) Matematika</td>
+                        <td>Akademik</td>
+                        <td>Nasional</td>
+                        <td><span class="juara-tag juara-1"><i class="fas fa-medal"></i> Medali Emas</span></td>
+                        <td>Ahmad Fauzi (Kelas XII MIPA 1)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2025</strong></td>
+                        <td>International Youth Science Competition</td>
+                        <td>Riset & Inovasi</td>
+                        <td>Internasional</td>
+                        <td><span class="juara-tag juara-1"><i class="fas fa-award"></i> Gold Award</span></td>
+                        <td>Tim Riset SMASA (Siti & Annisa)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2025</strong></td>
+                        <td>FLS2N Tari Kreasi Tradisional</td>
+                        <td>Seni</td>
+                        <td>Provinsi</td>
+                        <td><span class="juara-tag juara-2"><i class="fas fa-trophy"></i> Juara 2</span></td>
+                        <td>Grup Seni Tari SMASA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2025</strong></td>
+                        <td>POPDA Cabang Olahraga Bulutangkis Putra</td>
+                        <td>Olahraga</td>
+                        <td>Provinsi</td>
+                        <td><span class="juara-tag juara-1"><i class="fas fa-trophy"></i> Juara 1</span></td>
+                        <td>Bagas Pratama (Kelas XI IPS 2)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2024</strong></td>
+                        <td>Lomba Debate Bahasa Inggris (NSDC)</td>
+                        <td>Bahasa</td>
+                        <td>Nasional</td>
+                        <td><span class="juara-tag juara-3"><i class="fas fa-trophy"></i> Juara 3</span></td>
+                        <td>Tim English Club SMASA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2024</strong></td>
+                        <td>Lomba Baris Berbaris & Paskibraka</td>
+                        <td>Kedisiplinan</td>
+                        <td>Kabupaten</td>
+                        <td><span class="juara-tag juara-1"><i class="fas fa-trophy"></i> Juara Umum</span></td>
+                        <td>Paskibra SMAN 1 Kudus</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>SMA NEGERI 1 KUDUS</h4>
+                <p>Sekolah Menengah Atas unggulan di Kabupaten Kudus yang bertekad membentuk siswa-siswi berkarakter mulia dan berprestasi unggul.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="visi-misi.html">Visi & Misi</a></li>
+                    <li><a href="guru-staf.html">Guru & Staf</a></li>
+                    <li><a href="sejarah.html">Sejarah</a></li>
+                    <li><a href="prestasi.html">Prestasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="#">Kurikulum</a></li>
+                    <li><a href="#">Kesiswaan</a></li>
+                    <li><a href="#">Sarana Prasarana</a></li>
+                    <li><a href="#">Info SPMB</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Pramuka No.41, Nganguk, Mlati Lor, Kec. Kota Kudus, Kab. Kudus, Jawa Tengah 59319</p>
+                <p><i class="fas fa-phone"></i> (0291) 431368</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMA Negeri 1 Kudus (SMASA). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
