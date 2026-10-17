@@ -194,12 +194,12 @@
             font-weight: 800;
         }
 
-        /* ==================== 1. BERANDA (HERO) ==================== */
+        /* ==================== 1. BERANDA (HERO REVISED) ==================== */
         .hero {
             display: flex;
             align-items: center;
             gap: 50px;
-            min-height: 80vh;
+            min-height: 85vh;
             padding-top: 40px;
             padding-bottom: 40px;
         }
@@ -270,53 +270,84 @@
             color: var(--white);
         }
 
+        /* Hero Image Container Moden & Keren */
         .hero-image {
-            flex: 1;
+            flex: 1.1;
             position: relative;
         }
 
-        .hero-img-box {
+        .hero-img-wrapper {
+            position: relative;
+            border-radius: 24px;
+            padding: 8px;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            box-shadow: 0 20px 40px rgba(127, 29, 29, 0.25);
+            transition: var(--transition);
+        }
+
+        .hero-img-wrapper:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(127, 29, 29, 0.35);
+        }
+
+        .hero-main-img {
             width: 100%;
-            height: 420px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 20px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 18px;
+            display: block;
+        }
+
+        /* Overlay Gradien Penyerlah Gambar */
+        .hero-img-overlay {
+            position: absolute;
+            inset: 8px;
+            border-radius: 18px;
+            background: linear-gradient(to top, rgba(127, 29, 29, 0.6) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .hero-img-tag {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--white);
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-img-box i {
-            font-size: 8rem;
-            opacity: 0.2;
+            gap: 8px;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(8px);
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .stat-card {
             position: absolute;
-            bottom: -20px;
-            left: -20px;
+            bottom: -25px;
+            left: -25px;
             background: var(--white);
-            padding: 20px 25px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
+            padding: 18px 22px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
             display: flex;
             align-items: center;
             gap: 15px;
+            border: 1px solid var(--border-color);
+            z-index: 5;
         }
 
         .stat-card i {
             font-size: 2rem;
             color: var(--accent-color);
-            opacity: 1;
         }
 
         .stat-card h4 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--primary-color);
+            line-height: 1.1;
         }
 
         .stat-card p {
@@ -614,6 +645,9 @@
                 flex-direction: column;
                 grid-template-columns: 1fr;
             }
+            .hero-image {
+                width: 100%;
+            }
             .stats-section {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -641,6 +675,10 @@
             }
             .hero-content h1 {
                 font-size: 2.2rem;
+            }
+            .stat-card {
+                left: 10px;
+                bottom: -15px;
             }
         }
     </style>
@@ -692,8 +730,10 @@
             </div>
         </div>
         <div class="hero-image">
-            <div class="hero-img-box">
-                <i class="fas fa-school"></i>
+            <div class="hero-img-wrapper">
+                <img src="sma1kudus.png" alt="Angkatan Aethera SMAN 1 Kudus" class="hero-main-img">
+                <div class="hero-img-overlay">
+                </div>
             </div>
             <div class="stat-card">
                 <i class="fas fa-trophy"></i>
@@ -750,7 +790,7 @@
             <div class="principal-card">
                 <div class="principal-profile">
                     <div class="principal-img-wrapper">
-                        <img src="kepalaSekolah.png" alt="Nur Afifuddin - Kepala Sekolah SMAN 1 Kudus" class="principal-img">
+                        <img src="kepala-sekolah.png" alt="Nur Afifuddin - Kepala Sekolah SMAN 1 Kudus" class="principal-img">
                         <span class="principal-badge">KEPALA SEKOLAH</span>
                     </div>
                     <div class="principal-details">
