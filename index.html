@@ -196,41 +196,60 @@
 
         /* ==================== 1. BERANDA (HERO REVISED) ==================== */
         .hero {
+            position: relative;
             display: flex;
             align-items: center;
-            gap: 50px;
-            min-height: 85vh;
+            min-height: 90vh;
             padding-top: 40px;
             padding-bottom: 40px;
+            /* Background Gambar yang memudar ke warna merah solid di bagian kiri untuk teks */
+            background: linear-gradient(to right, rgba(127, 29, 29, 0.95) 0%, rgba(127, 29, 29, 0.75) 55%, rgba(31, 41, 55, 0.4) 100%), url('sma1kudus.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            max-width: 100%; /* Hero full width */
         }
 
         .hero-content {
             flex: 1;
+            max-width: 750px; /* Batas lebar teks agar rapi di sebelah kiri */
+            position: relative;
+            z-index: 10;
+            padding: 0 5%;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1300px; /* Menyelaraskan dengan section lain */
         }
 
         .badge {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent-hover);
+            background: rgba(245, 158, 11, 0.25);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
             padding: 6px 16px;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 700;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 20px;
+            backdrop-filter: blur(5px);
         }
 
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             line-height: 1.2;
-            color: var(--primary-color);
+            color: var(--white);
             font-weight: 800;
             margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 35px;
+            max-width: 650px;
         }
 
         .hero-btns {
@@ -239,7 +258,7 @@
         }
 
         .btn-primary {
-            background: var(--primary-color);
+            background: var(--accent-color); /* Ubah tombol utama hero ke accent */
             color: var(--white);
             padding: 12px 28px;
             border-radius: 8px;
@@ -251,95 +270,45 @@
         }
 
         .btn-primary:hover {
-            background: var(--secondary-color);
+            background: var(--accent-hover);
             transform: translateY(-2px);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
+            color: var(--white);
+            border: 2px solid var(--white);
             padding: 12px 28px;
             border-radius: 8px;
             font-weight: 600;
             transition: var(--transition);
+            backdrop-filter: blur(5px);
         }
 
         .btn-secondary:hover {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        /* Hero Image Container Moden & Keren */
-        .hero-image {
-            flex: 1.1;
-            position: relative;
-        }
-
-        .hero-img-wrapper {
-            position: relative;
-            border-radius: 24px;
-            padding: 8px;
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-            box-shadow: 0 20px 40px rgba(127, 29, 29, 0.25);
-            transition: var(--transition);
-        }
-
-        .hero-img-wrapper:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 50px rgba(127, 29, 29, 0.35);
-        }
-
-        .hero-main-img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 18px;
-            display: block;
-        }
-
-        /* Overlay Gradien Penyerlah Gambar */
-        .hero-img-overlay {
-            position: absolute;
-            inset: 8px;
-            border-radius: 18px;
-            background: linear-gradient(to top, rgba(127, 29, 29, 0.6) 0%, transparent 60%);
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
-        }
-
-        .hero-img-tag {
-            color: var(--white);
-            font-size: 0.9rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(8px);
-            padding: 8px 16px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .stat-card {
-            position: absolute;
-            bottom: -25px;
-            left: -25px;
             background: var(--white);
-            padding: 18px 22px;
+            color: var(--primary-color);
+        }
+
+        /* Stat Card Menjadi Melayang di Atas Background */
+        .hero .stat-card {
+            position: absolute;
+            bottom: 40px;
+            right: 8%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 18px 25px;
             border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
             display: flex;
             align-items: center;
             gap: 15px;
-            border: 1px solid var(--border-color);
-            z-index: 5;
+            border: 1px solid rgba(255,255,255,0.5);
+            z-index: 10;
         }
 
         .stat-card i {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--accent-color);
         }
 
@@ -351,8 +320,9 @@
         }
 
         .stat-card p {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
+            margin-bottom: 0;
         }
 
         /* Stats Counter Section */
@@ -364,9 +334,12 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             padding: 40px;
-            margin-top: 30px;
+            margin-top: -50px; /* Overlap sedikit dengan hero */
             margin-bottom: 50px;
             text-align: center;
+            position: relative;
+            z-index: 20;
+            box-shadow: 0 15px 40px rgba(127, 29, 29, 0.2);
         }
 
         .stat-item h3 {
@@ -378,32 +351,141 @@
         .stat-item p {
             font-size: 0.95rem;
             opacity: 0.8;
+            margin-bottom: 0;
         }
 
-        /* ==================== 2. TENTANG KAMI ==================== */
-        .about-container {
+        /* ==================== 2. TENTANG KAMI / SAMBUTAN ==================== */
+        .about-welcome-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 380px 1fr;
+            gap: 60px;
             align-items: center;
+            position: relative;
+            padding: 20px 0;
         }
 
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
+        .welcome-photo-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
         }
 
-        .about-text p {
+        /* Shape Merah & Kuning Dekoratif */
+        .decor-shape-red {
+            position: absolute;
+            bottom: -18px;
+            left: -18px;
+            width: 120px;
+            height: 160px;
+            background: var(--primary-color);
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .decor-shape-yellow {
+            position: absolute;
+            top: -12px;
+            right: 15px;
+            width: 80px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 16px;
+            z-index: 1;
+        }
+
+        .welcome-photo-card {
+            position: relative;
+            z-index: 2;
+            background: var(--white);
+            padding: 12px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .welcome-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 16px;
+            display: block;
+        }
+
+        .principal-name-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 12px 18px;
+            border-left: 4px solid var(--accent-color);
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .principal-name-card h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .principal-name-card p {
+            font-size: 0.82rem;
             color: var(--text-muted);
-            margin-bottom: 15px;
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+
+        /* Teks Sambutan Right Content */
+        .welcome-text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .welcome-tag {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .tag-line {
+            width: 35px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .welcome-heading {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .welcome-heading .highlight-school {
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .welcome-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            margin-top: 25px;
+            margin-top: 15px;
+            margin-bottom: 20px;
         }
 
         .feature-item {
@@ -416,100 +498,60 @@
 
         .feature-item i {
             color: var(--accent-color);
+            font-size: 1.1rem;
         }
 
-        .principal-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            border-top: 6px solid var(--primary-color);
+        .welcome-bottom-row {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .principal-profile {
-            display: flex;
-            gap: 20px;
             align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
         }
 
-        .principal-img-wrapper {
-            position: relative;
-            flex-shrink: 0;
+        .principal-name-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 14px 24px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .principal-img {
-            width: 140px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 3px solid var(--accent-color);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        .principal-name-card h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
         }
 
-        .principal-badge {
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+        .principal-name-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+
+        .btn-gallery {
             background: var(--primary-color);
             color: var(--white);
-            font-size: 0.7rem;
+            padding: 12px 28px;
+            border-radius: 10px;
             font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 20px;
-            white-space: nowrap;
-            letter-spacing: 0.5px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .principal-details h4 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 4px;
-        }
-
-        .principal-details .title-tag {
-            color: var(--accent-hover);
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .principal-details small {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            display: block;
-        }
-
-        .principal-quote {
-            position: relative;
-            background: var(--bg-light);
-            padding: 20px 20px 20px 40px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-color);
-            font-style: italic;
-            color: var(--text-dark);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .principal-quote::before {
-            content: "\f10d";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            color: var(--accent-color);
-            opacity: 0.5;
-            font-size: 1.1rem;
+        .btn-gallery:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(127, 29, 29, 0.2);
+            color: var(--white);
         }
 
         /* ==================== 4. ACARA & BERITA ==================== */
@@ -641,15 +683,36 @@
 
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 992px) {
-            .hero, .about-container {
-                flex-direction: column;
-                grid-template-columns: 1fr;
+            .hero {
+                background: linear-gradient(rgba(127, 29, 29, 0.85), rgba(127, 29, 29, 0.85)), url('sma1kudus.png');
+                background-position: center;
+                background-size: cover;
+                text-align: center;
+                align-items: center;
             }
-            .hero-image {
-                width: 100%;
+            .hero-content {
+                padding: 40px 5%;
+            }
+            .hero-btns {
+                justify-content: center;
+            }
+            .hero .stat-card {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin: 40px auto 0 auto;
+                width: fit-content;
+            }
+            .about-welcome-wrapper {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .welcome-heading {
+                font-size: 2.2rem;
             }
             .stats-section {
                 grid-template-columns: repeat(2, 1fr);
+                margin-top: -30px;
             }
             .footer-content {
                 grid-template-columns: 1fr 1fr;
@@ -663,10 +726,6 @@
             .nav-links {
                 display: none;
             }
-            .principal-profile {
-                flex-direction: column;
-                text-align: center;
-            }
             .stats-section {
                 grid-template-columns: 1fr;
             }
@@ -674,11 +733,21 @@
                 grid-template-columns: 1fr;
             }
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
-            .stat-card {
-                left: 10px;
-                bottom: -15px;
+            .welcome-heading {
+                font-size: 1.8rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .welcome-bottom-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-gallery {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -728,20 +797,7 @@
                 <a href="#tentang" class="btn-primary">Jelajahi Profil <i class="fas fa-arrow-right"></i></a>
                 <a href="#acara" class="btn-secondary">Agenda Acara</a>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="hero-img-wrapper">
-                <img src="sma1kudus.png" alt="Angkatan Aethera SMAN 1 Kudus" class="hero-main-img">
-                <div class="hero-img-overlay">
-                </div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-trophy"></i>
-                <div>
-                    <h4>Juara 1</h4>
-                    <p>Karnaval Budaya Kudus 2026</p>
-                </div>
-            </div>
+            
         </div>
     </section>
 
@@ -767,40 +823,52 @@
         </div>
     </div>
 
-    <!-- SECTION 2: TENTANG KAMI -->
+    <!-- SECTION 2: TENTANG KAMI / SAMBUTAN KEPALA SEKOLAH -->
     <section id="tentang">
-        <div class="section-title">
-            <span>Mengenal Sekolah Kami</span>
-            <h2>Tentang SMAN 1 Kudus</h2>
-        </div>
-        <div class="about-container">
-            <div class="about-text">
-                <h3>Tradisi Keunggulan dan Inovasi Tanpa Henti</h3>
-                <p>SMA Negeri 1 Kudus (SMASA) merupakan salah satu sekolah unggulan terdepan di Kabupaten Kudus, Jawa Tengah. Berdiri dengan komitmen kuat untuk memajukan pendidikan nasional dan melahirkan lulusan berdaya saing tinggi.</p>
-                <p>Kami menerapkan kurikulum terintegrasi yang berfokus pada pembentukan karakter berkebinekaan global, penguasaan sains & teknologi, serta kepedulian terhadap kelestarian lingkungan hidup.</p>
-                
+        <div class="about-welcome-wrapper">
+            <!-- FOTO DENGAN DEKORASI BENTUK -->
+            <div class="welcome-photo-wrapper">
+                <div class="decor-shape-red"></div>
+                <div class="decor-shape-yellow"></div>
+                <div class="welcome-photo-card">
+                    <img src="kepala-sekolah.png" alt="Nur Afifuddin - Kepala Sekolah SMAN 1 Kudus" class="welcome-img">
+                    
+                    <!-- Kartu Nama Kepala Sekolah di Bawah Gambar -->
+                    <div class="principal-name-card">
+                        <h4>NUR AFIFUDDIN, S.Pd., M.Pd.</h4>
+                        <p>Kepala SMA Negeri 1 Kudus</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KONTEN TEKS SAMBUTAN -->
+            <div class="welcome-text-content">
+                <div class="welcome-tag">
+                    <span class="tag-line"></span>
+                    <i class="far fa-comment-dots"></i> Sambutan Kepala Sekolah
+                </div>
+
+                <h2 class="welcome-heading">
+                    Selamat Datang di
+                    <span class="highlight-school">SMA Negeri 1 Kudus</span>
+                </h2>
+
+                <p class="welcome-desc">
+                    Selamat datang di website resmi SMA Negeri 1 Kudus (SMASA). Website ini hadir sebagai media informasi dan komunikasi sekolah dalam menyampaikan berbagai kegiatan, prestasi, layanan pendidikan, serta perkembangan sekolah kepada seluruh warga sekolah, alumni, dan masyarakat luas.
+                </p>
+
                 <div class="features-grid">
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Kurikulum Merdeka Belajar</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Laboratorium Digital Lengkap</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Program Riset & Inovasi</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Fasilitas Olahraga & Seni</div>
                 </div>
-            </div>
-            
-            <div class="principal-card">
-                <div class="principal-profile">
-                    <div class="principal-img-wrapper">
-                        <img src="kepala-sekolah.png" alt="Nur Afifuddin - Kepala Sekolah SMAN 1 Kudus" class="principal-img">
-                        <span class="principal-badge">KEPALA SEKOLAH</span>
-                    </div>
-                    <div class="principal-details">
-                        <p class="title-tag">Sambutan Pimpinan</p>
-                        <h4>Nur Afifuddin</h4>
-                        <small>SMA Negeri 1 Kudus</small>
-                    </div>
-                </div>
-                <div class="principal-quote">
-                    "Selamat datang di website resmi SMAN 1 Kudus. Kami terus berkomitmen memberikan layanan pendidikan terbaik berbasis digital, mencetak insan beriman, berprestasi, dan siap menjawab tantangan zaman."
+
+                <div class="welcome-bottom-row">
+                    <!-- Tombol Galeri -->
+                    <a href="galery.html" class="btn-gallery">
+                        <i class="fas fa-images"></i> Lihat Galeri
+                    </a>
                 </div>
             </div>
         </div>
@@ -839,7 +907,7 @@
                 </div>
                 <div class="event-content">
                     <span class="event-tag">Prestasi</span>
-                    <h3>Puncak HUT Kudus: SMAN 1 Kudus Raik Juara 1 Karnaval</h3>
+                    <h3>Puncak HUT Kudus: SMAN 1 Kudus Raih Juara 1 Karnaval</h3>
                     <p>Penyerahan penghargaan resmi atas keberhasilan parade budaya memperingati Hari Jadi Kota Kudus.</p>
                     <div class="event-meta">
                         <span><i class="far fa-clock"></i> Selesai</span>
