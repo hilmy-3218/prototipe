@@ -213,23 +213,21 @@
         min-height: 90vh;
         padding-top: 40px;
         padding-bottom: 40px;
-        /* Background Gambar yang memudar ke warna merah solid di bagian kiri untuk teks */
         background: linear-gradient(to right, rgba(127, 29, 29, 0.95) 0%, rgba(127, 29, 29, 0.75) 55%, rgba(31, 41, 55, 0.4) 100%), url('sma1kudus.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        max-width: 100%; /* Hero full width */
+        max-width: 100%;
       }
 
       .hero-content {
         flex: 1;
-        max-width: 750px; /* Batas lebar teks agar rapi di sebelah kiri */
         position: relative;
         z-index: 10;
         padding: 0 5%;
         margin: 0 auto;
         width: 100%;
-        max-width: 1300px; /* Menyelaraskan dengan section lain */
+        max-width: 1300px;
       }
 
       .badge {
@@ -269,7 +267,7 @@
       }
 
       .btn-primary {
-        background: var(--accent-color); /* Ubah tombol utama hero ke accent */
+        background: var(--accent-color);
         color: var(--white);
         padding: 12px 28px;
         border-radius: 8px;
@@ -301,42 +299,6 @@
         color: var(--primary-color);
       }
 
-      /* Stat Card Menjadi Melayang di Atas Background */
-      .hero .stat-card {
-        position: absolute;
-        bottom: 40px;
-        right: 8%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 18px 25px;
-        border-radius: 16px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        z-index: 10;
-      }
-
-      .stat-card i {
-        font-size: 2.2rem;
-        color: var(--accent-color);
-      }
-
-      .stat-card h4 {
-        font-size: 1.3rem;
-        font-weight: 800;
-        color: var(--primary-color);
-        line-height: 1.1;
-      }
-
-      .stat-card p {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        margin-bottom: 0;
-      }
-
-      /* Stats Counter Section */
       .stats-section {
         background: var(--primary-color);
         color: var(--white);
@@ -345,7 +307,7 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         padding: 40px;
-        margin-top: -50px; /* Overlap sedikit dengan hero */
+        margin-top: -50px;
         margin-bottom: 50px;
         text-align: center;
         position: relative;
@@ -382,7 +344,6 @@
         margin: 0 auto;
       }
 
-      /* Shape Merah & Kuning Dekoratif */
       .decor-shape-red {
         position: absolute;
         bottom: -18px;
@@ -425,10 +386,14 @@
       }
 
       .principal-name-card {
-        background: var(--bg-light);
-        border-radius: 12px;
-        padding: 12px 18px;
-        border-left: 4px solid var(--accent-color);
+        background: var(--white);
+        border-radius: 14px;
+        padding: 14px 24px;
+        border-left: 5px solid var(--accent-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        border-top: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
         margin-top: 12px;
         text-align: center;
       }
@@ -447,7 +412,6 @@
         margin-top: 2px;
       }
 
-      /* Teks Sambutan Right Content */
       .welcome-text-content {
         display: flex;
         flex-direction: column;
@@ -519,31 +483,6 @@
         gap: 20px;
         flex-wrap: wrap;
         margin-top: 10px;
-      }
-
-      .principal-name-card {
-        background: var(--white);
-        border-radius: 14px;
-        padding: 14px 24px;
-        border-left: 5px solid var(--accent-color);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-        border-top: 1px solid var(--border-color);
-        border-right: 1px solid var(--border-color);
-        border-bottom: 1px solid var(--border-color);
-      }
-
-      .principal-name-card h4 {
-        font-size: 1.1rem;
-        font-weight: 800;
-        color: var(--text-dark);
-        letter-spacing: 0.5px;
-      }
-
-      .principal-name-card p {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        margin-bottom: 0;
-        margin-top: 2px;
       }
 
       .btn-gallery {
@@ -773,7 +712,7 @@
         margin: 0 auto;
         padding: 0 5% 40px 5%;
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        grid-template-columns: 1.8fr 1.2fr 1.2fr;
         gap: 40px;
       }
 
@@ -781,21 +720,77 @@
         color: var(--accent-color);
         font-size: 1.1rem;
         margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 8px;
       }
 
-      .footer-col p,
-      .footer-col li {
-        color: rgba(255, 255, 255, 0.7);
+      .footer-col h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 35px;
+        height: 3px;
+        background: var(--accent-color);
+        border-radius: 2px;
+      }
+
+      .footer-quote {
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        border-left: 3px solid var(--accent-color);
+        padding-left: 15px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-links-list a {
+        color: rgba(255, 255, 255, 0.8);
         font-size: 0.9rem;
-        margin-bottom: 10px;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
       }
 
-      .footer-col ul li a:hover {
+      .footer-links-list a:hover {
+        color: var(--accent-color);
+        transform: translateX(5px);
+      }
+
+      .footer-socials {
+        display: flex;
+        gap: 12px;
+        margin-top: 15px;
+      }
+
+      .footer-socials a {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.1);
         color: var(--white);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .footer-socials a:hover {
+        background: var(--accent-color);
+        color: var(--primary-color);
+        transform: translateY(-3px);
       }
 
       .footer-bottom {
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.25);
         text-align: center;
         padding: 20px;
         font-size: 0.85rem;
@@ -817,13 +812,6 @@
         .hero-btns {
           justify-content: center;
         }
-        .hero .stat-card {
-          position: relative;
-          bottom: 0;
-          right: 0;
-          margin: 40px auto 0 auto;
-          width: fit-content;
-        }
         .about-welcome-wrapper {
           grid-template-columns: 1fr;
           gap: 50px;
@@ -844,7 +832,8 @@
           height: 350px;
         }
         .footer-content {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
+          gap: 30px;
         }
       }
 
@@ -856,9 +845,6 @@
           display: none;
         }
         .stats-section {
-          grid-template-columns: 1fr;
-        }
-        .footer-content {
           grid-template-columns: 1fr;
         }
         .hero-content h1 {
@@ -1164,7 +1150,7 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7230491845187!2d110.84074237587428!3d-6.81442126665042!2m3!1f0!0f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70c4c23db2e805%3A0x6b45d082eb4b2323!2sSMA%20Negeri%201%20Kudus!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrencedpolicy="no-referrer-when-downgrade"
           >
           </iframe>
         </div>
@@ -1174,36 +1160,58 @@
     <!-- FOOTER -->
     <footer>
       <div class="footer-content">
+        <!-- Kolom 1: Motto & Media Sosial -->
         <div class="footer-col">
-          <h4>SMA NEGERI 1 KUDUS</h4>
-          <p>Sekolah Menengah Atas unggulan di Kabupaten Kudus yang bertekad membentuk siswa-siswi berkarakter mulia dan berprestasi unggul.</p>
+          <h4>Semboyan Sekolah</h4>
+          <p class="footer-quote">"Pendidikan bukan sekadar mengisi wadah, melainkan menyalakan api pengetahuan, integritas, dan semangat berkarya untuk bangsa."</p>
+          <div class="footer-socials">
+            <a
+              href="#"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="#"
+              aria-label="TikTok"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Navigasi</h4>
-          <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="visi-misi.html">Visi & Misi</a></li>
-            <li><a href="guru-staf.html">Guru & Staf</a></li>
-            <li><a href="sejarah.html">Sejarah</a></li>
-            <li><a href="prestasi.html">Prestasi</a></li>
-            <li><a href="#lokasi">Lokasi</a></li>
-          </ul>
-        </div>
+
+        <!-- Kolom 2: Portal & Sistem Digital -->
         <div class="footer-col">
           <h4>Informasi</h4>
-          <ul>
-            <li><a href="#">Kurikulum</a></li>
-            <li><a href="#">Kesiswaan</a></li>
-            <li><a href="#">Sarana Prasarana</a></li>
-            <li><a href="#">Info SPMB</a></li>
-          </ul>
+          <div class="footer-links-list">
+            <a href="#"><i class="fas fa-angle-right"></i> Waka Kurikulum</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Waka Kesiswaan</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Waka Prasarana Sarana</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Waka Humas</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Kontak Smasaku</a>
+          </div>
         </div>
+
+        <!-- Kolom 3: Dokumen & Informasi Publik -->
         <div class="footer-col">
-          <h4>Hubungi Kami</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Jl. Pramuka No.41, Nganguk, Mlati Lor, Kec. Kota Kudus, Kab. Kudus, Jawa Tengah 59319</p>
-          <p><i class="fas fa-phone"></i> (0291) 431368</p>
+          <h4>Unduhan & Berkas</h4>
+          <div class="footer-links-list">
+            <a href="#"><i class="fas fa-file-pdf"></i> Kalender Akademik 2025/2026</a>
+            <a href="#"><i class="fas fa-file-pdf"></i> Buku Panduan Siswa</a>
+            <a href="#"><i class="fas fa-file-pdf"></i> Jurnal Penelitian Sekolah</a>
+            <a href="#"><i class="fas fa-download"></i> Brosur SPMB Online</a>
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2026 SMA Negeri 1 Kudus (SMASA). All Rights Reserved.</p>
       </div>
