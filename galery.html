@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Kegiatan & Dokumentasi - SMA Negeri 1 Kudus</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* ==================== RESET & VARIABLES ==================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --primary-color: #7f1d1d; /* Deep Red */
+        --secondary-color: #b91c1c; /* Royal Red */
+        --accent-color: #f59e0b; /* Gold Accent */
+        --accent-hover: #d97706;
+        --text-dark: #1f2937;
+        --text-muted: #6b7280;
+        --bg-light: #f8fafc;
+        --white: #ffffff;
+        --border-color: #e2e8f0;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      body {
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* ==================== HEADER & NAVBAR ==================== */
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+      }
+
+      .top-bar {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 8px 5%;
+        font-size: 0.85rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-info span {
+        margin-right: 20px;
+      }
+
+      .top-info i {
+        color: var(--accent-color);
+        margin-right: 6px;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo-icon {
+        width: 45px;
+        height: 45px;
+        background: var(--primary-color);
+        color: var(--accent-color);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+
+      .logo-text h1 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        line-height: 1.1;
+      }
+
+      .logo-text p {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--accent-color);
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--accent-color);
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .btn-portal {
+        background-color: var(--accent-color);
+        color: var(--white) !important;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: 700 !important;
+      }
+
+      .btn-portal:hover {
+        background-color: var(--accent-hover);
+      }
+
+      .btn-portal::after {
+        display: none !important;
+      }
+
+      /* ==================== HERO GALLERY ==================== */
+      .gallery-hero {
+        background: linear-gradient(135deg, rgba(127, 29, 29, 0.95), rgba(185, 28, 28, 0.85)),
+                    url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        text-align: center;
+        padding: 80px 5% 60px;
+        position: relative;
+      }
+
+      .gallery-hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .gallery-hero h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+
+      .gallery-hero p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 25px;
+      }
+
+      .breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 8px 20px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        backdrop-filter: blur(5px);
+      }
+
+      .breadcrumb a {
+        color: var(--accent-color);
+        font-weight: 600;
+      }
+
+      /* ==================== GALLERY SECTION ==================== */
+      .gallery-section {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 60px 5%;
+      }
+
+      /* Filter Buttons */
+      .filter-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 40px;
+      }
+
+      .filter-btn {
+        background: var(--white);
+        border: 2px solid var(--border-color);
+        color: var(--text-dark);
+        padding: 10px 22px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--primary-color);
+        color: var(--white);
+        border-color: var(--primary-color);
+        box-shadow: 0 5px 15px rgba(127, 29, 29, 0.2);
+      }
+
+      .filter-btn.active i {
+        color: var(--accent-color);
+      }
+
+      /* Gallery Grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      /* FULL IMAGE CARD STYLING (ASPECT RATIO 16:9) */
+      .gallery-card {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        display: block;
+        transition: var(--transition);
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 35px rgba(127, 29, 29, 0.25);
+      }
+
+      /* Full Image */
+      .gallery-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery-card:hover .gallery-img {
+        transform: scale(1.12);
+      }
+
+      /* Always Subtle Gradient Overlay (Base) */
+      .gallery-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.15) 60%, transparent 100%);
+        z-index: 1;
+        transition: var(--transition);
+      }
+
+      /* Full Hover Overlay Gradient */
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(127, 29, 29, 0.95) 0%, rgba(31, 41, 55, 0.82) 100%);
+        z-index: 2;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+        transition: var(--transition);
+      }
+
+      .gallery-card:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      /* Category Tag */
+      .gallery-tag {
+        align-self: flex-start;
+        background: var(--accent-color);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 3px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 8px;
+        transform: translateY(15px);
+        transition: var(--transition);
+      }
+
+      /* Title & Description Inside Hover */
+      .gallery-overlay-title {
+        color: var(--white);
+        font-size: 1.1rem;
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: 6px;
+        transform: translateY(15px);
+        transition: var(--transition);
+        transition-delay: 0.05s;
+      }
+
+      .gallery-overlay-desc {
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 0.82rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        transform: translateY(15px);
+        transition: var(--transition);
+        transition-delay: 0.1s;
+      }
+
+      /* Action Link Button */
+      .gallery-btn-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--accent-color);
+        font-weight: 700;
+        font-size: 0.82rem;
+        transform: translateY(15px);
+        transition: var(--transition);
+        transition-delay: 0.15s;
+      }
+
+      .gallery-btn-link i {
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-card:hover .gallery-btn-link i {
+        transform: translateX(5px);
+      }
+
+      /* Hover Motion Effects for Content */
+      .gallery-card:hover .gallery-tag,
+      .gallery-card:hover .gallery-overlay-title,
+      .gallery-card:hover .gallery-overlay-desc,
+      .gallery-card:hover .gallery-btn-link {
+        transform: translateY(0);
+      }
+
+      /* Default Card Title Visible before hover */
+      .card-default-title {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        z-index: 2;
+        color: var(--white);
+        font-size: 1rem;
+        font-weight: 700;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+        transition: var(--transition);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .gallery-card:hover .card-default-title {
+        opacity: 0;
+      }
+
+      /* ==================== FOOTER ==================== */
+      footer {
+        background: var(--primary-color);
+        color: var(--white);
+        padding-top: 60px;
+        margin-top: 80px;
+      }
+
+      .footer-content {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 5% 40px 5%;
+        display: grid;
+        grid-template-columns: 1.8fr 1.2fr 1.2fr;
+        gap: 40px;
+      }
+
+      .footer-col h4 {
+        color: var(--accent-color);
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .footer-col h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 35px;
+        height: 3px;
+        background: var(--accent-color);
+        border-radius: 2px;
+      }
+
+      .footer-quote {
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        border-left: 3px solid var(--accent-color);
+        padding-left: 15px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-links-list a {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .footer-links-list a:hover {
+        color: var(--accent-color);
+        transform: translateX(5px);
+      }
+
+      .footer-socials {
+        display: flex;
+        gap: 12px;
+        margin-top: 15px;
+      }
+
+      .footer-socials a {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--white);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .footer-socials a:hover {
+        background: var(--accent-color);
+        color: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        background: rgba(0, 0, 0, 0.25);
+        text-align: center;
+        padding: 20px;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .top-bar { display: none; }
+        .nav-links { display: none; }
+        .gallery-hero h1 { font-size: 2rem; }
+        .gallery-grid { grid-template-columns: 1fr; }
+        .footer-content { grid-template-columns: 1fr; gap: 30px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="top-info">
+        <span><i class="fas fa-phone"></i> (0291) 431368</span>
+        <span><i class="fas fa-envelope"></i> info@sma1kudus.sch.id</span>
+        <span><i class="fas fa-map-marker-alt"></i> Jl. Pramuka No.41, Kudus</span>
+      </div>
+      <div class="top-social">
+        <span>NPSN: 20317531 | Akreditasi A</span>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="logo-text">
+            <h1>SMAN 1 KUDUS</h1>
+            <p>SMASAKU BERSINERGI</p>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="visi-misi.html">Visi & Misi</a></li>
+          <li><a href="guru-staf.html">Guru & Staf</a></li>
+          <li><a href="sejarah.html">Sejarah</a></li>
+          <li><a href="prestasi.html">Prestasi</a></li>
+          <li><a href="galery.html" class="active">Galeri</a></li>
+          <li>
+            <a href="index.html#acara" class="btn-portal">SPMB Online</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO GALERI -->
+    <section class="gallery-hero">
+      <div class="gallery-hero-content">
+        <h1>Galeri & Dokumentasi SMASA</h1>
+        <p>Merekam jejak langkah, momen kebersamaan, dan deretan prestasi civitas akademika SMA Negeri 1 Kudus.</p>
+        <div class="breadcrumb">
+          <a href="index.html">Beranda</a>
+          <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+          <span>Galeri Foto</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI SECTION -->
+    <section class="gallery-section">
+      <!-- Filter Kategori -->
+      <div class="filter-container">
+        <button class="filter-btn active" onclick="filterGallery(event, 'all')">
+          <i class="fas fa-th-large"></i> Semua Foto
+        </button>
+        <button class="filter-btn" onclick="filterGallery(event, 'kegiatan')">
+          <i class="fas fa-running"></i> Kegiatan Siswa
+        </button>
+        <button class="filter-btn" onclick="filterGallery(event, 'prestasi')">
+          <i class="fas fa-trophy"></i> Prestasi & Lomba
+        </button>
+        <button class="filter-btn" onclick="filterGallery(event, 'fasilitas')">
+          <i class="fas fa-building"></i> Fasilitas Kampus
+        </button>
+        <button class="filter-btn" onclick="filterGallery(event, 'seni')">
+          <i class="fas fa-palette"></i> Seni & Budaya
+        </button>
+      </div>
+
+      <!-- Gallery Grid dengan Full Image Card -->
+      <div class="gallery-grid" id="galleryGrid">
+        
+        <!-- Card 1 -->
+        <a href="detail-kegiatan-kkri.html" class="gallery-card" data-category="kegiatan">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Kegiatan KKRI" class="gallery-img" />
+          <div class="card-default-title">Peluncuran Ekstrakurikuler KKRI</div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Kegiatan Siswa</span>
+            <h3 class="gallery-overlay-title">Peluncuran Ekstrakurikuler KKRI</h3>
+            <p class="gallery-overlay-desc">Penanaman karakter kedisiplinan, kepemimpinan, dan cinta tanah air bagi seluruh generasi muda SMASA.</p>
+            <span class="gallery-btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="detail-parade-budaya.html" class="gallery-card" data-category="seni">
+          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop" alt="Parade Budaya" class="gallery-img" />
+          <div class="card-default-title">Parade Budaya HUT Kudus</div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Seni & Budaya</span>
+            <h3 class="gallery-overlay-title">Parade Budaya HUT Kudus</h3>
+            <p class="gallery-overlay-desc">Penampilan memukau kontingen SMAN 1 Kudus yang berhasil menggaet Juara 1 Karnaval Budaya.</p>
+            <span class="gallery-btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="detail-pilketos.html" class="gallery-card" data-category="kegiatan">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Pemilihan OSIS" class="gallery-img" />
+          <div class="card-default-title">Demokrasi Sekolah: Pilketos</div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Kegiatan Siswa</span>
+            <h3 class="gallery-overlay-title">Demokrasi Sekolah: Pilketos</h3>
+            <p class="gallery-overlay-desc">Pembelajaran demokrasi secara langsung dan terbuka dalam pemilihan pimpinan OSIS SMASA.</p>
+            <span class="gallery-btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="detail-perpustakaan.html" class="gallery-card" data-category="fasilitas">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop" alt="Perpustakaan" class="gallery-img" />
+          <div class="card-default-title">Perpustakaan Digital SMASA</div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Fasilitas Kampus</span>
+            <h3 class="gallery-overlay-title">Perpustakaan Digital SMASA</h3>
+            <p class="gallery-overlay-desc">Fasilitas Learning Center modern dengan koleksi ribuan e-book dan jurnal riset lengkap.</p>
+            <span class="gallery-btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="detail-osn-sains.html" class="gallery-card" data-category="prestasi">
+          <img src="https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?q=80&w=800&auto=format&fit=crop" alt="Juara OSN" class="gallery-img" />
+          <div class="card-default-title">Juara Olimpiade Sains (OSN)</div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Prestasi & Lomba</span>
+            <h3 class="gallery-overlay-title">Juara Olimpiade Sains (OSN)</h3>
+            <p class="gallery-overlay-desc">Pencapaian gemilang tim olimpiade SMASA menyabet medali emas tingkat nasional.</p>
+            <span class="gallery-btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="detail-lab-komputer.html" class="gallery-card" data-category="fasilitas">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop" alt="Lab Komputer" class="gallery-img" />
+          <div class="card-default-title">Laboratorium Komputer & Riset</div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Fasilitas Kampus</span>
+            <h3 class="gallery-overlay-title">Laboratorium Komputer & Riset</h3>
+            <p class="gallery-overlay-desc">Ruang laboratorium komputer berkecepatan tinggi untuk menunjang pembelajaran digital era 5.0.</p>
+            <span class="gallery-btn-link">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <!-- Kolom 1 -->
+        <div class="footer-col">
+          <h4>Semboyan Sekolah</h4>
+          <p class="footer-quote">"Pendidikan bukan sekadar mengisi wadah, melainkan menyalakan api pengetahuan, integritas, dan semangat berkarya untuk bangsa."</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Kolom 2 -->
+        <div class="footer-col">
+          <h4>Informasi</h4>
+          <div class="footer-links-list">
+            <a href="#"><i class="fas fa-angle-right"></i> Waka Kurikulum</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Waka Kesiswaan</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Waka Prasarana Sarana</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Waka Humas</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Kontak Smasaku</a>
+          </div>
+        </div>
+
+        <!-- Kolom 3 -->
+        <div class="footer-col">
+          <h4>Unduhan & Berkas</h4>
+          <div class="footer-links-list">
+            <a href="#"><i class="fas fa-file-pdf"></i> Kalender Akademik 2025/2026</a>
+            <a href="#"><i class="fas fa-file-pdf"></i> Buku Panduan Siswa</a>
+            <a href="#"><i class="fas fa-file-pdf"></i> Jurnal Penelitian Sekolah</a>
+            <a href="#"><i class="fas fa-download"></i> Brosur SPMB Online</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SMA Negeri 1 Kudus (SMASA). All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILTER KATEGORI -->
+    <script>
+      function filterGallery(event, category) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+
+        const cards = document.querySelectorAll('.gallery-card');
+        cards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
